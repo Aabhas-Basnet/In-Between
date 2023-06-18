@@ -1,0 +1,482 @@
+<html>
+<head>
+<title>In-Between</title>
+<link rel="shortcut icon" type="x-icon" href="CARDS.png">
+</head>
+
+<body>
+
+<section class="Section-1">
+
+  <div id="Base1" class="Base">
+  <img src="CARDS.png" id="cover_Image"/>
+  
+  <div class="Play-box"> 
+  
+  <div>
+    <img src="TITLE.png"/>
+  </div>
+  
+  <div class="Bet_Amount">
+  <legend style="text-align: center; color:#fff; font-weight: bold;">Amount</legend>
+  <input type="radio" checked class="Bet" id="50"> 50</input>
+  <input type="radio" class="Bet" id="100"> 100</input>
+  <input type="radio" class="Bet" id="200"> 200</input>
+  </div>
+  
+  <div class="buttons">
+  <button type="button" class="Buttons" onclick="Start_Game()">PLAY!</button>
+  <button type="button"  class="Buttons" onclick="Tutorial()">TUTORIAL!</button>
+  </div>
+  
+  </div>
+  
+  </div>
+  
+   <div id="Base2" class="Base1">
+      <h1 id="Score" style="text-align:center; font-weight: bold; color: #fff; font-size: 2em"></h1>
+	  
+	  <div class="Card_Box">
+	  
+	  <img id="Card1" class="Card"/>
+      <img id="Card2" class="Card"/>
+      <img id="Card3" class="Card"/>
+	  
+	  </div>
+	  
+	  <div class="Game_Buttons" style="width: 100%;"> 
+	   <button type="button"  class="Buttons" onclick="Game_Over()" id="HOME">QUIT</button>
+	   <button type="button"  class="Buttons" onclick="Check(1)" id="INB">IN BETWEEN</button>
+	   <button type="button"  class="Buttons" onclick="Flip_Card()" id="Flip">FLIP</button>
+	   <button type="button"  class="Buttons" onclick="Check(2)" id="NINB">NOT IN BETWEEN</button>
+	   <button type="button"   class="Buttons" onclick="Restart_Game()" id="PLAY">PLAY AGIAN</button>
+	   </div>
+	   
+	   <h1 id="Result" style="text-align:center; font-weight: bold; color: #fff; font-size: 2em"></h1>
+   
+   </div>
+   
+   <div id="Base3" class="Base2" >
+     <h1 id="GO" style="text-align:center; font-weight: bold; color: #fff; font-size: 5em">GAME OVER</h1>
+	 <h1 id="Score1" style="text-align:center; font-weight: bold; color: #fff; font-size: 5em"></h1>
+	 <div class="buttons" style="align-items:center;">
+	 <img src="COVER.png" id="Cover1" />
+	 <button type="button" class="Buttons" onclick="Go_Home()" id="HOME1">HOME</button>
+	 </div>
+   </div>
+   
+    <div id="Base4" class="Base2" >
+     <h1 id="GO" style="text-align:center; font-weight: bold; color: #fff; font-size: 5em">Rules</h1>
+	 <p id="Ins">1. Flip 2 cards and try to guess whether the number of the third card is in between the number of 2 flipped.<br>
+	      2. For example if the first card is 1(Ace) and next is Queen(12) then you need to guess whether the third card number is between 1-12.<br>
+	      3. If you think the third card is not in between 1-12 then bet "Not-Inbetween" else bet "In-between"<br>
+	      4. It does not matter whether the first card is greater or smaller than the third card you just need to know that the range between smaller to greater number."<br>
+	      5. You can just chose and bet amount of 50, 100 and 200 and try your luck<br>
+	      6. Based upon your response the game can deduct or add more points of 5, 10 and 20.<br>
+	      7. Play as long as you can and try your luck!</p>
+	 <button type="button" class="Buttons" onclick="Go_Home()" id="HOME1">HOME</button>
+	 </div>
+   </div>
+ 
+    
+  
+</section>
+
+</body>
+
+</html>
+
+<style>
+
+body{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ background-color: #789FA9;
+}
+
+.Section-1{
+ width:80%;
+ height: 80%;
+ background: green;
+}
+
+#Ins{
+ text-align: justified;
+ font-weight: bold; 
+ color: #fff; 
+ border: 2px solid #fff;
+ font-size: 1.1em;
+ }
+
+.Base{ 
+ width: 100%;
+ height:100%
+}
+
+.Base, .Card_Box, .Game_Buttons{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ }
+ 
+ .Play-box, .buttons, .Base1, .Base2{
+   display: flex;
+   flex-direction: column;
+ }
+
+.Base1, .Base2{
+ width: 100%;
+ height: 100%;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.Card_Box{
+ width: 100%;
+ height: 60%;
+}
+
+#cover_Image{
+ width:40%;
+ height:60%;
+}
+
+#Cover1{
+ width: 20%;
+ height: 30%;
+}
+
+.Card{
+ width: 25%;
+ height: 100%;
+}
+
+.Play-box{
+  padding: 100px;
+  justify-content: space-around;
+  height: 30%;
+}
+
+.Bet_Amount{
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.Bet{
+ margin-left: 50px;
+}
+
+#Base2, #Base3, #Base4{
+ display:none;
+}
+
+#INB, #NINB, #HOME, #PLAY{
+ display:none;
+}
+
+.Buttons{
+ font-size: 1em;
+ text-align: right;
+ margin: 15px;
+}
+
+@media only screen and (max-width:1200px){
+html{
+ font-size: 1.8em;
+}
+
+.Section-1{
+ height: auto;
+}
+
+#cover_Image{
+ width:30%;
+ height:20%;
+}
+
+.Base, .Card_Box{
+ flex-direction: column;
+ }
+ 
+ .Card{
+  padding: 20px;
+ }
+
+#Cover1{
+ width: 100%;
+ height: 100%;
+}
+
+#Ins{
+ border: 1px solid #fff;
+ padding: 50px;
+ font-size: 1.1em;
+ }
+
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+Num1 =0;
+Num2 =0;
+Num3 =0;
+Score = 0
+
+Bet = document.getElementById("50");
+Bet1 = document.getElementById("100");
+Bet2 = document.getElementById("200");
+score = document.getElementById("Score");
+score1 = document.getElementById("Score1");
+Result = document.getElementById("Result");
+
+   
+Generate_Num = function(Type,Num_Check){
+ if (Type==1){
+  Num = Math.floor(Math.random() * 13)+1;
+ }else{
+  while (true){
+    Num = Math.floor(Math.random() * 10)+1;
+    if(Num != Num_Check){
+	  break;
+	}
+  }
+ }
+ return Num;
+}
+
+Start_Game = function(){
+  Section1 = document.getElementById("Base1");
+  Section1.setAttribute("style","display:none;");
+  
+  Section2 = document.getElementById("Base2");
+  Section2.setAttribute("style","display:flex;");
+  
+  Section3 = document.getElementById("Base3");
+  Section3.setAttribute("style","display:none;");
+  
+  Section4 = document.getElementById("Base4");
+  Section4.setAttribute("style","display:none;");
+  
+  Flip_Button = document.getElementById("Flip");
+  Flip_Button.setAttribute("style","display:block;");
+  
+  Home = document.getElementById("HOME");
+  Home.setAttribute("style","display:none;");
+  
+  Play_Agian = document.getElementById("PLAY");
+  Play_Agian.setAttribute("style","display:none;");
+  
+  Card1 = document.getElementById("Card1");
+  Card1.src = 'BACKGROUND.png';
+  
+  Card2 = document.getElementById("Card2");
+  Card2.src = 'BACKGROUND.png';
+  
+  Card3 = document.getElementById("Card3");
+  Card3.src = 'BACKGROUND.png';
+  
+  if (Bet.checked == true){
+    Score = 50;
+  }else if (Bet1.checked == true){
+    Score = 100;
+  }else{
+    Score = 200;
+  }
+  
+  Result.innerHTML  = "";
+
+  score.innerHTML = "Rs."+Score;
+}
+  
+Restart_Game = function(){
+  console.log(Score);
+  if (Score < 20){
+    Game_Over();
+  }else{
+    Card1 = document.getElementById("Card1");
+    Card1.src = 'BACKGROUND.png';
+  
+    Card2 = document.getElementById("Card2");
+    Card2.src = 'BACKGROUND.png';
+  
+    Card3 = document.getElementById("Card3");
+    Card3.src = 'BACKGROUND.png';
+  
+    Flip_Button = document.getElementById("Flip");
+    Flip_Button.setAttribute("style","display:block;");
+  
+    Home = document.getElementById("HOME");
+    Home.setAttribute("style","display:none;");
+  
+    Play_Agian = document.getElementById("PLAY");
+    Play_Agian.setAttribute("style","display:none;");
+  
+    Result.innerHTML  = "";
+	}
+
+}
+
+Tutorial = function(){
+  Section1 = document.getElementById("Base1");
+  Section1.setAttribute("style","display:none;");
+  
+  Section4 = document.getElementById("Base4");
+  Section4.setAttribute("style","display:flex;");
+}
+
+Game_Over = function(){
+  Section2 = document.getElementById("Base2");
+  Section2.setAttribute("style","display:none;");
+  
+  Section3 = document.getElementById("Base3");
+  Section3.setAttribute("style","display:block;");
+  
+  score1.innerHTML = "Rs."+Score + "  Left";
+}
+
+Go_Home = function(){
+  Section1 = document.getElementById("Base1");
+  Section1.setAttribute("style","display:flex;");
+  
+  Section2 = document.getElementById("Base2");
+  Section2.setAttribute("style","display:none;");
+  
+  Section3 = document.getElementById("Base3");
+  Section3.setAttribute("style","display:none;");
+}
+  
+Flip_Card = function(){
+  Num1 = Generate_Num (1,0);
+  Num2 = Generate_Num (2,Num1)
+   
+  Flip_Button = document.getElementById("Flip");
+  Flip_Button.setAttribute("style","display:none;");
+  
+  Flip_Button1 = document.getElementById("INB");
+  Flip_Button1.setAttribute("style","display:block;");
+  
+  Flip_Button2 = document.getElementById("NINB");
+  Flip_Button2.setAttribute("style","display:block;");
+  
+  Card1 = document.getElementById("Card1");
+  Card1.src = Num1+'.png';
+  
+  Card3 = document.getElementById("Card3");
+  Card3.src = Num2+'.png';
+}
+
+Check = function(Type){
+  Input = Type;
+  Pointer = false
+  Num3 = Generate_Num (1,0);
+  Win = false;
+  Lose = false;
+  Diff  = 0;
+  Reduction = 0;
+
+  Card2 = document.getElementById("Card2");
+  Card2.src = Num3+'.png';
+  
+  Flip_Button1 = document.getElementById("INB");
+  Flip_Button1.setAttribute("style","display:none;");
+  
+  Flip_Button2 = document.getElementById("NINB");
+  Flip_Button2.setAttribute("style","display:none;");
+  
+  if (Num1 > Num2){
+    Diff = Num1 - Num2;
+    if (Num3 < Num1 && Num3 > Num2){
+	  Pointer = true;
+	}else{
+	  Pointer = false;
+	}
+  }else if (Num2 > Num1){
+    Diff = Num2 - Num1;
+    if (Num3 < Num2 && Num3 > Num1){
+	  Pointer = true;
+	}else{
+	  Pointer = false;
+	}
+  }
+  if ((Type == 1 && Pointer == true)|| (Type == 2 && Pointer == false)){
+    Win = true;
+  }else{
+    Lose=true;
+  }
+  
+  if (Diff >= 8 && Type == 2 && Pointer == false){
+    Score += 20;
+	Reduction = 20;
+  }else if (Diff >= 5 && Diff <8 && Type == 2 && Pointer == false){
+    Score += 10;
+	Reduction = 10;
+  }else  if (Diff >= 1 && Diff <5 && Type == 2 && Pointer == false){
+    Score += 5;
+	Reduction = 5;
+  }
+  
+  if (Diff >= 8 && Type == 1 && Pointer == false){
+    Score -= 5;
+	Reduction = -5;
+  }else if (Diff >= 5 && Diff <8 && Type == 1 && Pointer == false){
+    Score -= 10;
+	Reduction = -10;
+  }else  if (Diff >= 1 && Diff <5 && Type == 1 && Pointer == false){
+    Score -= 20;
+	Reduction = -20;
+  }
+  
+  if (Diff >= 8 && Type == 1 && Pointer == true){
+    Score += 5;
+	Reduction = 5;
+  }else if (Diff >= 5 && Diff <8 && Type == 1 && Pointer == true){
+    Score += 10;
+	Reduction = 10;
+  }else  if (Diff >= 1 && Diff <5 && Type == 1 && Pointer == true){
+    Score += 20;
+	Reduction = 20;
+  }
+  
+   if (Diff >= 8 && Type == 2 && Pointer == true){
+    Score -= 20;
+	Reduction = -20;
+  }else if (Diff >= 5 && Diff <8 && Type == 2 && Pointer == true){
+    Score -= 10;
+	Reduction = -10;
+  }else  if (Diff >= 1 && Diff <5 && Type == 2 && Pointer == true){
+    Score -= 5;
+	Reduction = -5;
+  }
+ 
+
+  score.innerHTML = "Rs."+Score;
+  
+  if (Pointer == true){
+  	  Result.innerHTML = "IN-BETWEEN" + '(' + Reduction + ')';
+	}else if (Pointer == false){
+	  Result.innerHTML = "NOT IN-BETWEEN" + '(' + Reduction + ')';
+	}
+  
+  Home = document.getElementById("HOME");
+  Home.setAttribute("style","display:block;");
+  
+  Play_Agian = document.getElementById("PLAY");
+  Play_Agian.setAttribute("style","display:block;");
+  
+}
+
+$(document).ready(function(){
+
+      $('.Bet').click(function() {
+         $('.Bet').not(this).prop('checked', false);
+      });
+
+   });
+ 
+</script>
+
