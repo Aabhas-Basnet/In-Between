@@ -1,0 +1,132 @@
+
+
+body{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ background-color: #789FA9;
+}
+
+.Section-1{
+ width:80%;
+ height: 80%;
+ background: green;
+}
+
+#Ins{
+ text-align: justified;
+ font-weight: bold; 
+ color: #fff; 
+ border: 2px solid #fff;
+ font-size: 1.1em;
+ }
+
+.Base{ 
+ width: 100%;
+ height:100%
+}
+
+.Base, .Card_Box, .Game_Buttons{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ }
+ 
+ .Play-box, .buttons, .Base1, .Base2{
+   display: flex;
+   flex-direction: column;
+ }
+
+.Base1, .Base2{
+ width: 100%;
+ height: 100%;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.Card_Box{
+ width: 100%;
+ height: 60%;
+}
+
+#cover_Image{
+ width:40%;
+ height:60%;
+}
+
+#Cover1{
+ width: 20%;
+ height: 30%;
+}
+
+.Card{
+ width: 25%;
+ height: 100%;
+}
+
+.Play-box{
+  padding: 100px;
+  justify-content: space-around;
+  height: 30%;
+}
+
+.Bet_Amount{
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.Bet{
+ margin-left: 50px;
+}
+
+#Base2, #Base3, #Base4{
+ display:none;
+}
+
+#INB, #NINB, #HOME, #PLAY{
+ display:none;
+}
+
+.Buttons{
+ font-size: 1em;
+ text-align: right;
+ margin: 15px;
+}
+
+@media only screen and (max-width:1200px){
+html{
+ font-size: 1.8em;
+}
+
+.Section-1{
+ height: auto;
+}
+
+#cover_Image{
+ width:30%;
+ height:20%;
+}
+
+.Base, .Card_Box{
+ flex-direction: column;
+ }
+ 
+ .Card{
+  padding: 20px;
+ }
+
+#Cover1{
+ width: 100%;
+ height: 100%;
+}
+
+#Ins{
+ border: 1px solid #fff;
+ padding: 50px;
+ font-size: 1.1em;
+ }
+
+}
+
+
